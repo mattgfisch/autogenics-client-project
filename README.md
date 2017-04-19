@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## How to open coverage report:
+* In the command line, run $ open coverage/index.html
