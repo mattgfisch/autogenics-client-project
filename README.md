@@ -1,5 +1,6 @@
 # Auto Genics Experimental Message Board
 This project is a client project based out of a Dev Bootcamp curriculum activity.
+
 ## Collaborators:
 - Linseyo
 - Joshmun
@@ -12,5 +13,8 @@ The project was modeled after real world experience working with a client. The t
 
 ## Install:
 *Fill In Later
+### How to open coverage report:
+* In the command line, run $ open coverage/index.html
+
 ## Use:
 *Fill In Later
