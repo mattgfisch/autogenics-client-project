@@ -14,7 +14,11 @@ The project was modeled after real world experience working with a client. The t
 ## Install:
 *Fill In Later
 ### How to open coverage report:
-* In the command line, run $ open coverage/index.html
+* In the command line:
+
+```
+run $ open coverage/index.html
+```
 
 ## Use:
 *Fill In Later
