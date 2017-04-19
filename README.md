@@ -1,4 +1,4 @@
-# Auto Genics Experimental Message Board
+# Autogenics Experimental Message Board
 This project is a client project based out of a Dev Bootcamp curriculum activity.
 
 ## Collaborators:
