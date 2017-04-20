@@ -5,7 +5,11 @@
 </div>
 <div class='row'>
   <div class='col-xs-1 column'> </div>
-  <div class='col-xs-10 column'><%= button_to "Post New Experiment", new_experiment_path, method: :get , :class => 'btn btn-default'%></div>
+  <div class='col-xs-10 column'>
+    <% if session[:role] == "Faculty" %>
+      <%= button_to "Post New Experiment", new_experiment_path, method: :get , :class => 'btn btn-default'%>
+    <% end %>
+  </div>
   <div class='col-xs-1 column'> </div>
 </div>
 <div class='row'>
