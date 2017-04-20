@@ -1,20 +1,18 @@
 <div class='row'>
-  <div class='col-mid-1'></div>
-  <div class='col-mid-10'>
-    <h1 class='page-header'>Autogenics Experiments List</h1>
-  </div>
-  <div class='col-mid-1'></div>
+  <div class='col-md-1 column'>I'm here</div>
+  <div class='col-md-10 column'><h1>Autogenics Experiments List</h1></div>
+  <div class='col-md-1 column'>I'm here too</div>
 </div>
 <div class='row'>
-  <div class='col-mid-1'></div>
-  <div class='col-mid-10 experiments-list'>
+  <div class='col-md-1 column'>This is a thing</div>
+  <div class='col-md-10 column experiments-list'>
     <ul>
       <% @experiments.each do |experiment| %>
         <li>
-          <!-- do some stuff here -->
+          <%= link_to "#{experiment.title}", experiment_path %>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class='col-mid-1'></div>
+  <div class='col-md-1 column'>Also a thing</div>
 </div>
