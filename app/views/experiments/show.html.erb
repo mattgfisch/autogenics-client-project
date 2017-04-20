@@ -1,51 +1,50 @@
 <div class= "row">
-  <div class="col-md-1">
-  </div>
-  <div class="col-md-10">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
     <div id="main-content">
-      <div>
+      <div class="sub-content" id="article-title">
         <h1> Article Title </h1>
       </div>
-      <div>
+      <div class="sub-content" id="article-abstract">
         <h3> Abstract </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-intro">
         <h3> Introduction </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-material">
         <h3> Materials and Methods </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-results">
         <h3> Results </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-disc">
         <h3> Discussion </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-con">
         <h3> Conclusion </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-sup-info">
         <h3> Supporting Info </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-acknow">
         <h3> Acknowledgments </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-author-cont">
         <h3> Author Contributions </h3>
       </div>
-      <div>
+      <div class="sub-content" id="article-ref">
         <h3> References </h3>
       </div>
     </div>
     <div id="staff-content">
-        <h3> Experiment Staff </h3>
-        <% form_for something_path do |f| %>
-          <% f.submit %>
-        <% end %>
+        <h3> Current Experiment Staff </h3>
+          <%= form_for experiment_path do |f| %>
+          <%= f.submit 'Sign Up For Experiment!', :class => 'btn btn-default' %>
+          <% end %>
     </div>
   </div>
 
-  <div class="col-md-1">
+  <div class="col-xs-1">
   </div>
 
 
