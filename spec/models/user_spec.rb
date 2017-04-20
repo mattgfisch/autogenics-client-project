@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   describe "associations" do
-    
+
     let (:josh) { User.new(name: "Josh", email: "email@email.com", password: "password") }
     let(:austin) { User.new(name: "Austin", email: "email@email.com", password: "password") }
     before(:each) do
@@ -18,14 +18,12 @@ RSpec.describe User, type: :model do
 
       it 'has a role as staff' do
           austin.role = Role.create!(name: "Faculty")
-          austin.save
         expect(austin.clearance_levels).to eq "Faculty"
       end
     end
 
     before(:each) do
       austin.role = Role.create!(name: "Staff")
-      austin.save
     end
 
     let (:experiment) { Experiment.create!(title: "Study in Scarlet", content: "Sherlock Holmes", author_id: josh.id) }
