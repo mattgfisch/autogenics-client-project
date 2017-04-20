@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <%= form_for @experiment do |f| %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+
+      <%= f.label :abstract %><br>
+      <%= f.text_area :abstract, size: "50x10"  %>
+
+      <%= f.label :introduction %><br>
+      <%= f.text_area :introduction, size: "50x10"  %>
+
+      <%= f.label :matertials %><br>
+      <%= f.text_area :matertials, size: "50x10"  %>
+
+      <%= f.label :results %><br>
+      <%= f.text_area :results, size: "50x10"  %>
+
+      <%= f.label :discussion %><br>
+      <%= f.text_area :discussion, size: "50x10"  %>
+
+      <%= f.label :conclusions %><br>
+      <%= f.text_area :conclusions, size: "50x10"  %>
+
+      <%= f.label :supporting_info %><br>
+      <%= f.text_area :supporting_info, size: "50x10"  %>
+
+      <%= f.label :acknowledgments %><br>
+      <%= f.text_area :acknowledgments, size: "50x10"  %>
+
+      <%= f.label :author_contributions %><br>
+      <%= f.text_area :author_contributions, size: "50x10"  %>
+
+      <%= f.label :references %><br>
+      <%= f.text_area :references, size: "50x10"  %>
+
+      <%= f.label :staff size %><br>
+      <%= f.number_field :staff size, size: "50x10"  %>
+
+  </div>
+  <div class="col-xs-1"></div>
+</div>
