@@ -1,16 +1,16 @@
 <div class='row'>
-  <div class='col-md-1 column'> </div>
-  <div class='col-md-10 column'><h1>Autogenics Experiments List</h1></div>
-  <div class='col-md-1 column'> </div>
+  <div class='col-xs-1 column'> </div>
+  <div class='col-xs-10 column'><h1>Autogenics Experiments List</h1></div>
+  <div class='col-xs-1 column'> </div>
 </div>
 <div class='row'>
-  <div class='col-md-1 column'> </div>
-  <div class='col-md-10 column'><%= button_to "Post New Experiment", new_experiment_path %></div>
-  <div class='col-md-1 column'> </div>
+  <div class='col-xs-1 column'> </div>
+  <div class='col-xs-10 column'><%= button_to "Post New Experiment", new_experiment_path %></div>
+  <div class='col-xs-1 column'> </div>
 </div>
 <div class='row'>
-  <div class='col-md-1 column'> </div>
-  <div class='col-md-10 column experiments-list'>
+  <div class='col-xs-1 column'> </div>
+  <div class='col-xs-10 column experiments-list'>
     <ul>
       <% @experiments.each do |experiment| %>
         <li>
@@ -19,5 +19,5 @@
       <% end %>
     </ul>
   </div>
-  <div class='col-md-1 column'> </div>
+  <div class='col-xs-1 column'> </div>
 </div>
