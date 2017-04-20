@@ -38,6 +38,7 @@ gem 'action_access'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'faker'
   gem 'byebug', platform: :mri
   gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 3.5'
