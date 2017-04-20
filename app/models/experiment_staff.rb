@@ -1,2 +1,0 @@
-class ExperimentStaff < ApplicationRecord
-end
