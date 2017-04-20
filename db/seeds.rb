@@ -1,11 +1,11 @@
 require 'faker'
 
 Role.destroy_all
- faculty = Role.create!(name: "Faculty")
+faculty = Role.create!(name: "Faculty")
 staff = Role.create!(name: "Staff")
 
-User.create!(name: "Josh", email: "email@email.com", password: "password", role_id: faculty.id)
-User.create!(name: "Austin", email: "email@email.com", password: "password", role_id: staff.id)
+josh = User.create!(name: "Josh", email: "email@email.com", password: "password", role_id: faculty.id)
+austin = User.create!(name: "Austin", email: "email@email.com", password: "password", role_id: staff.id)
 
 exp = Experiment.create!( title: Faker::Lorem.sentence,
                     abstract: Faker::Lorem.paragraph,
