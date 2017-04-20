@@ -4,4 +4,8 @@ class ExperimentsController < ApplicationController
     @experiment = Experiment.find(params[:id])
   end
 
+  def index
+    p "Got here"
+  end
+
 end
