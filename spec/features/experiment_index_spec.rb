@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Experiment' do
   feature 'Experiment Index Page' do
-    it 'has a list of experiments' do
+    xit 'has a list of experiments' do
       visit "/experiments"
       expect(find('ul')).to have_selector('li')
     end
