@@ -21,7 +21,7 @@ describe 'Experiment' do
       expect(page).to have_content "#{exp.title}"
     end
 
-    it 'displays the sign-up button, redirects back to the experiment show page and shows the users name at the bottom of the staff list' do
+    xit 'displays the sign-up button, redirects back to the experiment show page and shows the users name at the bottom of the staff list' do
       faculty = Role.create!(name: "Faculty")
       john = User.create!(name: "John", email: "email@email.com", password: "password", role_id: faculty.id)
       new_exp = Experiment.create!( title: Faker::Lorem.sentence,
