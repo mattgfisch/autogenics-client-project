@@ -1,6 +1,8 @@
 require 'faker'
 
-Role.destroy_all
+Role.delete_all
+User.delete_all
+
 faculty = Role.create!(name: "Faculty")
 staff = Role.create!(name: "Staff")
 

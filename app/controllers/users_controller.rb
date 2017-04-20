@@ -6,9 +6,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
 
-    redirect_to controller: "experiments", action: "index"
+    if @user.save
+      session[:user_id] = @user.id
+      session[:role] = @user.clearance_levels
+
+      redirect_to controller: "experiments", action: "index"
+    else
+      p @user.errors
+      @errors = @user.errors
+      render 'new'
+    end
+
   end
 
   private

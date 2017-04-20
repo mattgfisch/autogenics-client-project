@@ -13,7 +13,7 @@
   <div class='col-xs-10 column experiments-list'>
     <ul>
       <% @experiments.each do |experiment| %>
-        <li>
+        <li class='title'>
           <%= link_to "#{experiment.title}", experiment_path(experiment) %>
         </li>
       <% end %>
