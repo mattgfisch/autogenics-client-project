@@ -15,12 +15,27 @@ class SessionsController < ApplicationController
   end
 
   def new
-    # gets you the login form
+    @user = User.new
   end
 
   def create
-    # creates the session and it assigns the role
-    # it will redirect you to home page
+    user = User.find_by_email(user_params[:email])
+    if user && user.authenticate(user_params[:password])
+      session[:user_id] = user.id
+      session[:role] = user.clearance_levels
+      redirect_to controller: "experiments", action: "index"
+    else
+      redirect_to sessions_path
+    end
   end
 
+  def destroy
+    session.clear
+    redirect_to controller: "experiments", action: "index"
+  end
+
+  private
+    def user_params
+      params.require(:post).permit(:email, :password, :role)
+    end
 end

@@ -1,10 +1,22 @@
 <div class="row">
   <div class="col-xs-1"></div>
   <div class="col-xs-10">
-    <div id="main-content">
-        <%= button_to "Faculty", new_session_path %>
-        <%= button_to "Staff", new_session_path %>
-        <%= button_to "Register", new_session_path %>
+    <div id="main-content text-center">
+      <!-- <div class="col-xs-4 text-center"> -->
+      <div class="panel panel-default">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+        <p>
+          <%= button_to "Faculty", new_session_path, method: :get, :class => "btn btn-large btn-block" %>
+        </p>
+        <p>
+          <%= button_to "Staff", new_session_path, method: :get, :class => "btn btn-large btn-block" %>
+        </p>
+        <p>
+          <%= button_to "Register", new_session_path, method: :get, :class => "btn btn-large btn-block" %>
+        </p>
+        </div>
+      <!-- </div> -->
     </div>
   </div>
   <div class="col-xs-1"></div>
