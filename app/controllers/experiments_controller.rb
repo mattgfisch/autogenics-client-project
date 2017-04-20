@@ -26,5 +26,5 @@ class ExperimentsController < ApplicationController
     def experiment_params
        params.require(:article).permit(:title, :abstract, :introduction, :materials, :results, :discussion, :conclusion, :supporting_info, :acknowledgments, :author_contributions, :references, :staff_size)
     end
->>>>>>> post-experiment
+
 end
