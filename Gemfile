@@ -38,6 +38,8 @@ gem 'action_access'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'factory_girl_rails'
+  gem 'faker'
   gem 'byebug', platform: :mri
   gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 3.5'
@@ -52,6 +54,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 group :test do
   gem 'rails-controller-testing'
   gem 'capybara'
