@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-xs-1"></div>
   <div class="col-xs-10">
-    <div class="panel panel-default">
+    <div class="panel panel-default text-center">
       <div class="panel-heading">
         <h1 class="panel-title">Post a New Experiment </h1>
+      </div>
         <div class="panel-body">
+
           <%= form_for @experiment do |f| %>
             <p>
               <%= f.label :title %><br>
@@ -55,7 +57,6 @@
             <%= f.submit 'Post Experiment', :class => 'btn btn-default'  %>
           <% end %>
         </div>
-      </div>
     </div>
   </div>
   <div class="col-xs-1"></div>
