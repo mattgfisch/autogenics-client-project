@@ -3,4 +3,7 @@ class ExperimentsController < ApplicationController
     @experiments = Experiment.all
   end
 
+  def show
+  end
+
 end
