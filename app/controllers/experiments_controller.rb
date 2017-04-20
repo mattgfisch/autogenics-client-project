@@ -12,7 +12,7 @@ class ExperimentsController < ApplicationController
   end
 
   def create
-    @experiment = Experiment.new(experiment_params)
+    @experiment = Experiment.new(experiment_params, )
     @experiment.save
     redirect_to @experiment
   end
