@@ -5,7 +5,7 @@ class ExperimentsController < ApplicationController
   end
 
   def new
-    @experiment = Exeriment.new
+    @experiment = Experiment.new
   end
 
   def create
