@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       austin.role = Role.create!(name: "Staff")
     end
 
-    let (:experiment) { Experiment.create!(title: "Study in Scarlet", content: "Sherlock Holmes", author_id: josh.id) }
+    let (:experiment) { Experiment.create!(title: "Study in Scarlet", abstract: "Sherlock Holmes", introduction: "blank", materials: "blank",  author_id: josh.id) }
 
     context 'user and experiments associations' do
       it "author has many experiments posted" do
