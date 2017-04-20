@@ -1,6 +1,7 @@
 class ExperimentsController < ApplicationController
 
   def show
-    render 'show'
+    @experiment = Experiment.find(params[:id])
   end
+
 end
