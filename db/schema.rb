@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420175626) do
+
+ActiveRecord::Schema.define(version: 0) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170420175626) do
     t.text     "acknowledgments"
     t.text     "references"
     t.text     "author_contributions"
+    t.integer  "staff_size"
   end
 
   create_table "experiments_staff", force: :cascade do |t|
