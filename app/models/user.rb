@@ -10,7 +10,13 @@ class User < ApplicationRecord
   end
 
   def access_token=(given_token)
-    p access_token
+    if given_token == ENV['FACULTY_ACCESS_TOKEN']
+      self.role = Role.find_by(name: "Faculty")
+    elsif given_token == ENV['STAFF_ACCESS_TOKEN']
+      self.role = Role.find_by(staff: "Staff")
+    else
+      errors.add(:access_token, "Invalid access token")
+    end
   end
 
   def access_token

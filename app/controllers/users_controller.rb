@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-
+    p @user.clearance_levels
     redirect_to controller: "experiments", action: "index"
   end
 
