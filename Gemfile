@@ -45,7 +45,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 3.5'
-  gem 'action_access'
 end
 
 group :development do
@@ -63,7 +62,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'chromedriver-helper'
-  gem 'simplecov'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
