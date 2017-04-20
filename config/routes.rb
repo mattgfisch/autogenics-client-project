@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :experiments
+  resources :sessions, only: [:index, :new, :create]
 
 end
