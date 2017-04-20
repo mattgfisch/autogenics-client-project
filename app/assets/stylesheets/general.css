@@ -1,50 +1,20 @@
-div.col-xs-10 {
-  border-radius: 15px;
+/* unvisited link */
+a:link {
+  color: #6e2687;
+  text-decoration: none;
 }
 
-div.panel {
-  background-color: #b28dc7;
+/* visited link */
+a:visited {
+  color: #ccc47f;
 }
 
-div.panel-heading {
-  background-color: #6e2687;
-  color: white;
-
+/* mouse over link */
+a:hover {
+  color: #b28dc7;
 }
 
-div.panel-body {
-background-color: #ccc47f;
-}
-
-div.sub-content h3 {
-  background-color: #b28dc7;
-  padding: 2px;
-  border-radius: 2px;
-}
-
-.panel-title {
-  text-align: center;
-}
-
-.col-xs-1{
-  min-width: 25px;
-}
-
-.column {
-  border-style: none;
-}
-
-form {
-  text-align: center;
-}
-
-.form-group {
-  text-align: left;
-}
-
-li {
-  list-style: none;
-=======
-
->>>>>>> post-experiment
+/* selected link */
+a:active {
+  color: #f0db84;
 }
