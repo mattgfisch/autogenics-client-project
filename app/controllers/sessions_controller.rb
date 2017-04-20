@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
 
   def index
     # this is how you get the options to staff/faculty login
-
   end
 
   def new
