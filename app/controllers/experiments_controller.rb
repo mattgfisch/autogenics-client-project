@@ -7,4 +7,7 @@ class ExperimentsController < ApplicationController
     @experiment = Experiment.find(params[:id])
   end
 
+  def new
+  end
+
 end
