@@ -13,12 +13,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       session[:user_id] = @user.id
       session[:role] = @user.clearance_levels
 
-      redirect_to controller: "experiments", action: "index"
+      if request.xhr?
+        respond_to do |format|
+          format.js {}
+        end
+      else
+        redirect_to controller: "experiments", action: "index"
+      end
     else
       p @user.errors
       @errors = @user.errors
