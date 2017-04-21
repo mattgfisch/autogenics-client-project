@@ -9,10 +9,10 @@
         </div>
       <div class="panel-body">
         <p>
-          <%= button_to "Faculty", new_session_path, method: :get, :class => "btn btn-default btn-block" %>
+          <%= button_to "Faculty", new_session_path, method: :get, :class => "btn btn-default btn-block", remote: true %>
         </p>
         <p>
-          <%= button_to "Staff", new_session_path, method: :get, :class => "btn btn-default btn-block" %>
+          <%= button_to "Staff", new_session_path, method: :get, :class => "btn btn-default btn-block", remote: true %>
         </p>
         <p>
           <%= button_to "Register", new_user_path, method: :get, :class => "btn btn-default btn-block", :id => "button-to-registration", remote: true %>
