@@ -61,7 +61,7 @@
             <% end %>
             <li class="list-staff"></li>
         </ul>
-          <% if @user.role.name == "Staff" %>
+          <% if @user.role.name == "Staff" || experiment.staff.include?(@user.name) %>
             <%= form_for experiment, url: {controller: 'experiments', action: "update"}, remote: true do |f| %>
             <%= f.submit 'Sign Up For Experiment!', :class => 'btn btn-default' %>
             <% end %>
