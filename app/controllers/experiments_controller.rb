@@ -1,7 +1,7 @@
 class ExperimentsController < ApplicationController
 
   def index
-    @experiments = Experiment.all
+    @experiments = Experiment.order(created_at: :desc)
   end
 
   def show
