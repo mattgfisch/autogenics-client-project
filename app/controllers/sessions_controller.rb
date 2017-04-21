@@ -8,13 +8,25 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(user_params[:email])
+    @experiments = Experiment.all
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
       session[:role] = user.clearance_levels
-      "<%= render 'experiments/index' %>"
-      # redirect_to controller: "experiments", action: "index"
+      if request.xhr?
+        respond_to do |format|
+          format.js {}
+        end
+      else
+        redirect_to controller: "experiments", action: "index"
+      end
     else
-      redirect_to sessions_path
+      if request.xhr?
+        respond_to do |format|
+          # render the login partial(the current view)
+        end
+      else
+        redirect_to sessions_path
+      end
     end
   end
 

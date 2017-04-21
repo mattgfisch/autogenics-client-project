@@ -1,10 +1,19 @@
 $(document).ready(function(){
-  $('#session-submit').submit(function(event){
+  $('#ajax-content').on("submit","#new_post", function(event){
     event.preventDefault();
+    var formPath = $(this).attr('action');
+    var formMethod = $(this).attr('method');
+    var formData = $(this).serialize();
+
     var request = $.ajax({
-      url: '/sessions',
-      method: 'GET'
+      url: formPath,
+      method: formMethod,
+      data: formData
     });
-    $('#ajax-content').htl
+    request.done(function(response){
+      var parsed = JSON.parse(response);
+      $('#ajax-content').html(parsed);
+    });
+
   });
 });
