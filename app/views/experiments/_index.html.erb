@@ -17,7 +17,7 @@
   <div class="col-xs-10 column experiments-list">
   <br>
     <ul>
-      <% experiments.each do |selected_experiment| %>
+      <% @experiments.each do |selected_experiment| %>
         <li class="title">
           <%= link_to "#{selected_experiment.title}", experiment_path(selected_experiment)  %>
         </li><br>
