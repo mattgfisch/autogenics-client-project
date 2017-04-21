@@ -18,7 +18,7 @@ describe ExperimentsController do
 
   describe 'GET #show' do
     it 'responds with a status code of 200' do
-      get :show , { id: experiment.id }
+      get :show , params: { id: experiment.id }
       expect(response.status).to eq 200
     end
   end
@@ -38,15 +38,9 @@ describe ExperimentsController do
   end
 
   describe 'POST #create' do
-    before(:each) do
-      post :create,  experiment: exp
-   end
-
-    it 'creates a new experiment' do
-  end
-
-    it 'displays the show page after creating' do
+      it "responds with status code 302" do
+        post :create,  params: { experiment: experiment }
+        expect(response.status).to eq 302
     end
-
   end
 end
