@@ -29,8 +29,8 @@ class UsersController < ApplicationController
       if request.xhr?
         respond_to do |format|
           @errors = @user.errors
-          render partial: 'new'
-          format.js {}
+
+          format.js {render action: 'new'}
         end
       else
         render 'new'
