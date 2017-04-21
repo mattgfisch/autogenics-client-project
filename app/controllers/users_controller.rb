@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       if request.xhr?
         respond_to do |format|
           @errors = @user.errors
-
+          p @errors
           format.js {render action: 'new'}
         end
       else
