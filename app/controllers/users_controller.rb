@@ -26,9 +26,14 @@ class UsersController < ApplicationController
         redirect_to controller: "experiments", action: "index"
       end
     else
-      p @user.errors
-      @errors = @user.errors
-      render 'new'
+      if request.xhr?
+        respond_to do |format|
+          @errors = @user.errors
+          render partial: 'new'
+        end
+      else
+        render 'new'
+      end
     end
 
   end
