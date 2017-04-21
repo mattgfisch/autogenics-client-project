@@ -7,7 +7,8 @@ class ExperimentsController < ApplicationController
   def show
     @experiment = Experiment.find(params[:id])
     respond_to do |format|
-      format.js
+      format.js {}
+      format.html {}
     end
   end
 

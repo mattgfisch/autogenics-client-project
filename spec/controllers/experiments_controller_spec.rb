@@ -17,11 +17,12 @@ describe ExperimentsController do
                     author_id: josh.id) }
 
   describe 'GET #show' do
-    it 'responds with a status code 200' do
-      get :show, { id: exp.id }
-      expect(response). to have_http_status 200
+    it 'responds with a status code of 200' do
+      get :show , { id: experiment.id }
+      expect(response.status).to eq 200
     end
   end
+
   describe "GET #new" do
     before(:each) do
       get :new
@@ -38,11 +39,14 @@ describe ExperimentsController do
 
   describe 'POST #create' do
     before(:each) do
-     post :create,  experiment: exp
+      post :create,  experiment: exp
    end
 
-   it 'responds with a status code of 202' do
-    expect(response.status).to eq 202
+    it 'creates a new experiment' do
   end
+
+    it 'displays the show page after creating' do
+    end
+
   end
 end
