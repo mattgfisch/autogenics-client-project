@@ -1,0 +1,2 @@
+$('.navigation-contain').html("<%= escape_javascript (render 'navigation', locals: {logged_in: false})%>");
+$('#ajax-content').html("<%= escape_javascript (render 'sessions/index') %>");

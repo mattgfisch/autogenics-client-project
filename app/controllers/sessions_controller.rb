@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def index
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def new
