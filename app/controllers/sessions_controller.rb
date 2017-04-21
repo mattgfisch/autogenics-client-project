@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     else
       if request.xhr?
         respond_to do |format|
-          # render the login partial(the current view)
+          format.js { render action: 'create' }
         end
       else
         redirect_to sessions_path
