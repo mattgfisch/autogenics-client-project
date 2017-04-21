@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new
+    respond_to do |format|
+      format.js {}
+    end
+
   end
 
   def create
@@ -22,7 +26,7 @@ class SessionsController < ApplicationController
     else
       if request.xhr?
         respond_to do |format|
-          format.js { render action: 'create' }
+          format.js { render action: 'new' }
         end
       else
         redirect_to sessions_path
