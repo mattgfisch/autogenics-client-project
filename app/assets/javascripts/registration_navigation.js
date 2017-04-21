@@ -23,7 +23,7 @@ $(document).ready(function(){
       url: formPath,
       type: formMethod,
       data: formData,
-    })
+    });
     request.done(function(response){
       var parsed = JSON.parse(response);
       $('#ajax-content').html(parsed);
