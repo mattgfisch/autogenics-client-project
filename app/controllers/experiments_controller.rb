@@ -1,4 +1,5 @@
 class ExperimentsController < ApplicationController
+
   def index
     @experiments = Experiment.all
   end
@@ -9,11 +10,14 @@ class ExperimentsController < ApplicationController
 
   def new
     @experiment = Experiment.new
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def create
     p session[:user_id]
-    @experiment = Experiment.new( title: experiment_params[:title],
+    @experiment = Experiment.create!( title: experiment_params[:title],
                                   abstract: experiment_params[:abstract],
                                   introduction: experiment_params[:introduction],
                                   materials: experiment_params[:materials],
@@ -26,8 +30,9 @@ class ExperimentsController < ApplicationController
                                   author_contributions: experiment_params[:author_contributions],
                                   author_id: session[:user_id],
                                   staff_size: experiment_params[:staff_size])
-    @experiment.save
-    redirect_to @experiment
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   private

@@ -5,9 +5,9 @@
 </div>
 <div class='row'>
   <div class='col-xs-1 column'> </div>
-  <div class='col-xs-10 column'>
+  <div class='col-xs-10 column' id="new-post-exp">
     <% if session[:role] == "Faculty" %>
-      <%= button_to "Post New Experiment", new_experiment_path, method: :get , :class => 'btn btn-default'%>
+      <%= button_to "Post New Experiment", new_experiment_path, method: :get, :class => 'btn btn-default', remote: true %>
     <% end %>
   </div>
   <div class='col-xs-1 column'> </div>
