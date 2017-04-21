@@ -56,7 +56,7 @@
               <li id="no-staff">This experiment currently has no staff signed up!</li>
             <% else %>
               <% experiment.staff.each do |staff| %>
-                <li><%= staff.name %></li>
+                <li>Lab Staff: <%= staff.name %></li>
               <% end %>
             <% end %>
             <li class="list-staff"></li>
