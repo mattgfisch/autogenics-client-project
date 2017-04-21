@@ -16,6 +16,13 @@ describe ExperimentsController do
                     author_contributions: Faker::Lorem.paragraph,
                     author_id: josh.id) }
 
+  describe 'GET #index' do
+    it 'renders the :index template' do
+      get :index
+      expect(response).to render_template(:index)
+    end
+  end
+
   describe 'GET #show' do
     it 'responds with a status code of 200' do
       get :show , params: { id: experiment.id }
