@@ -30,6 +30,7 @@ class UsersController < ApplicationController
         respond_to do |format|
           @errors = @user.errors
           render partial: 'new'
+          format.js {}
         end
       else
         render 'new'
