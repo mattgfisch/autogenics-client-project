@@ -15,15 +15,16 @@ RSpec.describe IndexController, type: :controller do
   describe 'ajax rootpath' do
     context 'while user is logged in' do
       it 'renders the experiments index page' do
-        xhr :index
-        expect(response).to render_template("experiments/index")
+        session[:user_id] = 1
+        get :index, xhr: true
+        expect(response).to render_template("experiments/_index")
       end
     end
 
     context 'while user is not logged in' do
       it 'renders the login form sessions_index page' do
-        xhr :index
-        expect(response).to render_template("sessions/index")
+        get :index, xhr: true 
+        expect(response).to render_template("sessions/_index")
       end
     end
   end
