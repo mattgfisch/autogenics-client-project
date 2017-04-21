@@ -6,9 +6,9 @@
         <div class="panel-heading">
           <h1 class="panel-header">Post a New Experiment </h1>
         </div>
-          <div class="panel-body">
+          <div class="panel-body" id="create-exp">
 
-            <%= form_for @experiment do |f| %>
+            <%= form_for @experiment, remote: true do |f| %>
               <p>
                 <%= f.label :title %><br>
                 <%= f.text_field :title %>
