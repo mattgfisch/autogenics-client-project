@@ -6,6 +6,9 @@ class ExperimentsController < ApplicationController
 
   def show
     @experiment = Experiment.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   def new
@@ -13,7 +16,6 @@ class ExperimentsController < ApplicationController
   end
 
   def create
-    p session[:user_id]
     @experiment = Experiment.new( title: experiment_params[:title],
                                   abstract: experiment_params[:abstract],
                                   introduction: experiment_params[:introduction],

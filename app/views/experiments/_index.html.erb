@@ -12,14 +12,14 @@
   </div>
   <div class="col-xs-1 column"> </div>
 </div>
-<div class="row">
-  <div class="col-xs-1 column"> </div>
-  <div class="col-xs-10 column experiments-list">
+<div class='row'>
+  <div class='col-xs-1 column'> </div>
+  <div id="example-links" class='col-xs-10 column experiments-list'>
   <br>
     <ul>
-      <% @experiments.each do |selected_experiment| %>
-        <li class="title">
-          <%= link_to "#{selected_experiment.title}", experiment_path(selected_experiment)  %>
+      <% @experiments.each do |experiment| %>
+        <li class='title'>
+          <%= link_to "#{experiment.title}", experiment_path(experiment), remote: true %>
         </li><br>
       <% end %>
     </ul>
