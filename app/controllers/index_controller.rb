@@ -7,10 +7,13 @@ class IndexController < ApplicationController
       if session[:user_id]
         @experiments = Experiment.order(created_at: :desc)
         render partial: "experiments/index"
-        else
+      else
         render partial: "sessions/index"
       end
     end
+  end
+
+  def navigation_show
   end
 
 end
