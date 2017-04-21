@@ -4,8 +4,9 @@ $(document).ready(function(loaded) {
     url: "/",
     });
     request.done(function(response){
-      var content = JSON.parse(response);
-      $("#ajax-content").html(content);
+      console.log(response);
+      // var content = JSON.parse(response);
+      $("#ajax-content").html(response);
     })
   }
   else {

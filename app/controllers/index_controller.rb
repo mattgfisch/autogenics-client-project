@@ -11,11 +11,12 @@ class IndexController < ApplicationController
     # else
       # not logged in
       if request.xhr?
-        respond_to do |format|
-          # format.html
-          # format.json
-          format.js {}
-        end
+        render partial: "index"
+        # respond_to do |format|
+        #   # format.html
+        #   # format.json
+        #   format.js {}
+        # end
         # AJAX render the login form
       # else
       #   redirect_to controller: 'sessions', action: 'new'
