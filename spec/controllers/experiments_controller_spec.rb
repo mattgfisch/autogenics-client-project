@@ -45,9 +45,17 @@ describe ExperimentsController do
   end
 
   describe 'POST #create' do
-      it "responds with status code 302" do
-        post :create,  params: { experiment: experiment }
-        expect(response.status).to eq 302
+    it "raises an exception" do
+      expect{ post(:create, {}) }.to raise_error ActionController::ParameterMissing
+    end
+
+    it 'creates an experiment' do
+      faculty =  Role.create!(name: "Faculty")
+      john = User.create!(name: "John", email: "email2@email.com", password: "password", role_id: faculty.id)
+      post :create, params: {experiment: { title: 'Awesome Article', abstract: 'abstract goes here', author_id: john.id } }
+      p josh.id
+      expect(response.status).to eq 302
     end
   end
+
 end
