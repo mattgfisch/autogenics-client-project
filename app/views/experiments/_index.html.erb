@@ -19,7 +19,7 @@
     <ul>
       <% @experiments.each do |experiment| %>
         <li class='title'>
-          <%= link_to "#{experiment.title}", experiment_path(experiment)  %>
+          <%= link_to "#{experiment.title}", experiment_path(experiment), remote: true %>
         </li><br>
       <% end %>
     </ul>

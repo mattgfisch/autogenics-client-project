@@ -15,7 +15,6 @@ class ExperimentsController < ApplicationController
   end
 
   def create
-    p session[:user_id]
     @experiment = Experiment.new( title: experiment_params[:title],
                                   abstract: experiment_params[:abstract],
                                   introduction: experiment_params[:introduction],
