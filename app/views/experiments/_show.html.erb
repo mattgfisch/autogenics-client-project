@@ -53,15 +53,16 @@
         <ul>
           <li>Lead Researcher: <%= experiment.author.name %></li>
             <% if experiment.staff.empty? %>
-              <li>This experiment currently has no staff signed up!</li>
+              <li id="no-staff">This experiment currently has no staff signed up!</li>
             <% else %>
               <% experiment.staff.each do |staff| %>
                 <li><%= staff.name %></li>
               <% end %>
             <% end %>
+            <li class="list-staff"></li>
         </ul>
-          <%= form_for experiment_path do |f| %>
-          <%= f.submit 'Sign Up For Experiment!', :class => 'btn btn-default', remote: true %>
+          <%= form_for experiment, url: {controller: 'experiments', action: "update"}, remote: true do |f| %>
+          <%= f.submit 'Sign Up For Experiment!', :class => 'btn btn-default' %>
           <% end %>
           <br>
     </div>

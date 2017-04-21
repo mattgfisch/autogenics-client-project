@@ -33,6 +33,18 @@ class ExperimentsController < ApplicationController
     redirect_to @experiment
   end
 
+  def update
+    @lab_staff = User.find(session[:user_id])
+    @experiment = Experiment.find(params[:id])
+    if @experiment.staff.length <= 6
+      @experiment.staff << @lab_staff
+    end
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
+  end
+
   private
     def experiment_params
        params.require(:experiment).permit(:title, :abstract, :introduction, :materials, :results, :discussion, :conclusion, :supporting_info, :acknowledgments, :author_contributions, :references, :staff_size)
