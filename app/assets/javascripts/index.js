@@ -1,5 +1,4 @@
 $(document).ready(function(loaded) {
-  // if (signedIn === false ) {
   var request = $.ajax({
     url: "/",
     });

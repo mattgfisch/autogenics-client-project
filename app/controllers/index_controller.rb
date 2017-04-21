@@ -1,15 +1,19 @@
 class IndexController < ApplicationController
 
   def index
-    @experiments = Experiment.all
+    @experiments = Experiment.order(created_at: :desc)
     @user = User.new
     if request.xhr?
       if session[:user_id]
-        @experiments = Experiment.all
+        @experiments = Experiment.order(created_at: :desc)
         render partial: "experiments/index"
-        else
+      else
         render partial: "sessions/index"
       end
     end
   end
+
+  def navigation_show
+  end
+
 end
