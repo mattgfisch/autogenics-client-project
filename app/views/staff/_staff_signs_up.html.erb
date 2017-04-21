@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <div class=panel-heading>
+      <h1 class="panel-header">Sign up</h1>
+    </div>
+    <p>Please type your name to confirm you will be involved in <%= experiment.title %> for the duration of the experiment.</p>
+
+    <%= form_for experiment_path do |f| %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      <%= f.submit 'Sign Up', :class => 'btn btn-default' %>
+    <% end %>
+    </div>
+  </div>
+</div>
