@@ -5,6 +5,7 @@ class ExperimentsController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
     @experiment = Experiment.find(params[:id])
     respond_to do |format|
       format.js

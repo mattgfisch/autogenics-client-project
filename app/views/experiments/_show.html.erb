@@ -61,10 +61,12 @@
             <% end %>
             <li class="list-staff"></li>
         </ul>
-          <%= form_for experiment, url: {controller: 'experiments', action: "update"}, remote: true do |f| %>
-          <%= f.submit 'Sign Up For Experiment!', :class => 'btn btn-default' %>
-          <% end %>
+          <% if @user.role.name == "Staff" %>
+            <%= form_for experiment, url: {controller: 'experiments', action: "update"}, remote: true do |f| %>
+            <%= f.submit 'Sign Up For Experiment!', :class => 'btn btn-default' %>
+            <% end %>
           <br>
+          <% end %>
     </div>
   </div>
 
