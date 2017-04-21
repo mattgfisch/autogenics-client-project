@@ -20,14 +20,15 @@ describe 'Entire App' do
       expect(find('#ajax-content').find('h1')).to have_content('Autogenics Experiments List')
     end
 
-    it 'is able to render the login form' do
-      visit '/'
-      click_on "Login"
-      fill_in 'user_email', with: "tester23@test.com"
-      fill_in 'user_password', with: "password"
-      sleep(2)
-      expect(find('#ajax-content').find('h3')).to have_content('Login')
-    end
+    # it 'is able to render the login form' do
+    #   visit '/'
+    #   click_on "Faculty"
+    #   fill_in 'post_email', with: "tester23@test.com"
+    #   fill_in 'post_password', with: "password"
+    #   click_on "Login"
+    #   sleep(2)
+    #   expect(find('#ajax-content').find('h1')).to have_content('Autogenics Experiments List')
+    # end
 
     it 'is able to click on a new experiment post, render the template, fill out the template and then show the new experiments details' do
     end
