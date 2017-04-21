@@ -4,8 +4,6 @@ $(document).ready(function(loaded) {
     url: "/",
     });
     request.done(function(response){
-      console.log(response)
-      // var content = JSON.parse(response);
       $("#ajax-content").html(response);
     })
 });
