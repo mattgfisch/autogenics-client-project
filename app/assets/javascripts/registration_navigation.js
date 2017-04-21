@@ -9,7 +9,10 @@ $(document).ready(function(){
       type: button_method
     });
     request.done(function(response){
-
+      var parsed = JSON.parse(response);
+      $('#ajax-content').html(parsed);
     });
   });
+
+
 });

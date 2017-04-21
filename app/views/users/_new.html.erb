@@ -5,7 +5,7 @@
       <div class="panel-heading">
         <h3 class="panel-header">Create Account</h3>
       </div>
-      <div class="panel-body">
+      <div class="panel-body" id="create-account-form" >
         <%= form_for :user, url:{action: "create"} do |f| %>
           <div class="form-group">
             <label for="user[full_name]">Full Name</label>
