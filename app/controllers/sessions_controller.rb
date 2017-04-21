@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
       session[:role] = user.clearance_levels
-      redirect_to controller: "experiments", action: "index"
+      "<%= render 'experiments/index' %>"
+      # redirect_to controller: "experiments", action: "index"
     else
       redirect_to sessions_path
     end
