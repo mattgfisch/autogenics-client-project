@@ -1,9 +1,11 @@
-.img-thumbnail {
+#crane-logo {
   height: 60px;
   width: 60px;
-  float: right;
+  position: absolute;
+  right: 25px;
+  top: 10px;
 }
 
 #login-header {
-  margin-left: 22%;
+  text-align: center;
 }
