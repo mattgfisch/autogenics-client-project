@@ -8,7 +8,8 @@ class ExperimentsController < ApplicationController
     @user = User.find(session[:user_id])
     @experiment = Experiment.find(params[:id])
     respond_to do |format|
-      format.js
+      format.js {}
+      format.html {}
     end
   end
 
@@ -22,7 +23,7 @@ class ExperimentsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @experiment = Experiment.create!( title: experiment_params[:title],
+    @experiment = Experiment.new( title: experiment_params[:title],
                                       abstract: experiment_params[:abstract],
                                       introduction: experiment_params[:introduction],
                                       materials: experiment_params[:materials],
@@ -35,8 +36,16 @@ class ExperimentsController < ApplicationController
                                       author_contributions: experiment_params[:author_contributions],
                                       author_id: session[:user_id],
                                       staff_size: experiment_params[:staff_size])
-    respond_to do |format|
-      format.js {}
+    if @experiment.save
+      respond_to do |format|
+        format.js {}
+      end
+    else
+      @experiment = Experiment.new
+      @message = "Missing and/or incorrect information"
+      respond_to do |format|
+        format.js {render action: 'new'}
+      end
     end
   end
 

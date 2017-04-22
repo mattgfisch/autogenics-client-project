@@ -16,12 +16,20 @@ describe ExperimentsController do
                     author_contributions: Faker::Lorem.paragraph,
                     author_id: josh.id) }
 
-  describe 'GET #show' do
-    it 'responds with a status code 200' do
-      get :show, { id: exp.id }
-      expect(response). to have_http_status 200
+  describe 'GET #index' do
+    it 'renders the :index template' do
+      get :index
+      expect(response).to render_template(:index)
     end
   end
+
+  describe 'GET #show' do
+    it 'responds with a status code of 200' do
+      get :show , params: { id: experiment.id }
+      expect(response.status).to eq 200
+    end
+  end
+
   describe "GET #new" do
     before(:each) do
       get :new
@@ -37,12 +45,17 @@ describe ExperimentsController do
   end
 
   describe 'POST #create' do
-    before(:each) do
-     post :create,  experiment: exp
-   end
+    it "raises an exception" do
+      expect{ post(:create, {}) }.to raise_error ActionController::ParameterMissing
+    end
 
-   it 'responds with a status code of 202' do
-    expect(response.status).to eq 202
+    # xit 'creates an experiment' do
+    #   faculty =  Role.create!(name: "Faculty")
+    #   john = User.create!(name: "John", email: "email2@email.com", password: "password", role_id: faculty.id)
+    #   post :create, params: {experiment: { title: 'Awesome Article', abstract: 'abstract goes here', author_id: john.id } }
+    #   p josh.id
+    #   expect(response.status).to eq 302
+    # end
   end
-  end
+
 end
