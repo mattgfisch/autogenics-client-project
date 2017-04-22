@@ -39,8 +39,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.clear
-    redirect_to controller: "experiments", action: "index"
+    reset_session
+    if request.xhr?
+      respond_to do |format|
+        format.js {}
+      end
+    else
+      redirect_to controller: "experiments", action: "index"
+    end
   end
 
   private
