@@ -18,3 +18,7 @@ a:hover {
 a:active {
   color: #f0db84;
 }
+
+.errors-block {
+  color: red;
+}

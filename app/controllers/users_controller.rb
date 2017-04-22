@@ -27,8 +27,10 @@ class UsersController < ApplicationController
       end
     else
       if request.xhr?
+        @user = User.new unless @user
+        @message = "Registration information not valid."
         respond_to do |format|
-          @errors = @user.errors
+          # @errors = @user.errors
           format.js {render action: 'new'}
         end
       else
