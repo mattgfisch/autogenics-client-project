@@ -41,7 +41,7 @@ describe 'Entire App' do
       expect(page).to have_content ""
     end
 
-    it 'is able to click on the register button, register and render the experiment index page' do
+    it 'is able to click on the register button, register and render the experiment index page as a faculty' do
       visit '/'
       click_on 'Register'
       fill_in 'user_name', with: "Tester Name"
@@ -50,6 +50,26 @@ describe 'Entire App' do
       fill_in 'user_access_token', with: "abc123"
       click_on "Create"
       expect(find('#ajax-content').find('h1')).to have_content('Autogenics Experiments List')
+    end
+    it 'is able to click on the register button, register and render the experiment index page as a staff' do
+      visit '/'
+      click_on 'Register'
+      fill_in 'user_name', with: "Tester Name Staff"
+      fill_in 'user_email', with: "tester24@test.com"
+      fill_in 'user_password', with: "password"
+      fill_in 'user_access_token', with: "123abc"
+      click_on "Create"
+      expect(find('#ajax-content').find('h1')).to have_content('Autogenics Experiments List')
+    end
+
+    it 'is able to click on the register button, not register' do
+      visit '/'
+      click_on 'Register'
+      fill_in 'user_name', with: "Tester Name"
+      fill_in 'user_password', with: "password"
+      fill_in 'user_access_token', with: "abc123"
+      click_on "Create"
+      expect(find('#ajax-content').find('.errors-block')).to have_content('Registration information not valid.')
     end
 
     it 'is able to render the login form' do
