@@ -9,7 +9,7 @@
           <div class="panel-body" id="create-exp">
 
             <%= form_for @experiment, remote: true do |f| %>
-              <p>
+              <p class="col-">
                 <%= f.label :title %><br>
                 <%= f.text_field :title %>
               </p>
@@ -57,6 +57,11 @@
               </p>
 
               <%= f.submit 'Post Experiment', :class => 'btn btn-default'  %>
+            <% end %>
+            <% if @message %>
+              <div class="errors-block">
+                <%= @message %>
+              </div>
             <% end %>
           </div>
       </div>
