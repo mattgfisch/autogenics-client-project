@@ -21,6 +21,7 @@ class ExperimentsController < ApplicationController
   end
 
   def create
+    @user = User.find(session[:user_id])
     @experiment = Experiment.create!( title: experiment_params[:title],
                                       abstract: experiment_params[:abstract],
                                       introduction: experiment_params[:introduction],
@@ -42,7 +43,7 @@ class ExperimentsController < ApplicationController
   def update
     @lab_staff = User.find(session[:user_id])
     @experiment = Experiment.find(params[:id])
-    if @experiment.staff.length < 6
+    if @experiment.staff.count < @experiment.staff_size
       @experiment.staff << @lab_staff
     end
     respond_to do |format|
