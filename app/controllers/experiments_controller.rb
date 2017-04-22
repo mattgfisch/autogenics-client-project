@@ -42,7 +42,7 @@ class ExperimentsController < ApplicationController
   def update
     @lab_staff = User.find(session[:user_id])
     @experiment = Experiment.find(params[:id])
-    if @experiment.staff.length <= 6
+    if @experiment.staff.length < 6
       @experiment.staff << @lab_staff
     end
     respond_to do |format|
