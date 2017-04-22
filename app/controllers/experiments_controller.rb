@@ -21,7 +21,7 @@ class ExperimentsController < ApplicationController
   end
 
   def create
-    @experiment = Experiment.create!( title: experiment_params[:title],
+    @experiment = Experiment.new( title: experiment_params[:title],
                                       abstract: experiment_params[:abstract],
                                       introduction: experiment_params[:introduction],
                                       materials: experiment_params[:materials],
@@ -34,9 +34,12 @@ class ExperimentsController < ApplicationController
                                       author_contributions: experiment_params[:author_contributions],
                                       author_id: session[:user_id],
                                       staff_size: experiment_params[:staff_size])
-    respond_to do |format|
-      format.js {}
-    end
+    if @experiment.save
+      respond_to do |format|
+        format.js {}
+      end
+    else
+
   end
 
   private
