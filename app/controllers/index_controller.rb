@@ -6,14 +6,21 @@ class IndexController < ApplicationController
     if request.xhr?
       if session[:user_id]
         @experiments = Experiment.order(created_at: :desc)
-        render partial: "experiments/index"
+        respond_to do |format|
+          format.js {render action: 'logged_in_show'}
+        end
       else
-        render partial: "sessions/index"
+        respond_to do |format|
+          format.js {render action: 'logged_out_show'}
+        end
       end
     end
   end
 
-  def navigation_show
+  def logged_in_show
+  end
+
+  def logged_out_show
   end
 
 end

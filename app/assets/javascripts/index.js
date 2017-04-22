@@ -3,6 +3,5 @@ $(document).ready(function(loaded) {
     url: "/",
     });
     request.done(function(response){
-      $("#ajax-content").html(response);
-    })
+    });
 });
