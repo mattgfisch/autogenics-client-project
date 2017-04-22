@@ -16,7 +16,8 @@ describe 'Experiment' do
                     acknowledgments: Faker::Lorem.paragraph,
                     references: Faker::Lorem.paragraph,
                     author_contributions: Faker::Lorem.paragraph,
-                    author_id: josh.id)
+                    author_id: josh.id,
+                    staff_size: 2)
       visit "/experiments/#{exp.id}"
       expect(page).to have_content "#{exp.title}"
     end
