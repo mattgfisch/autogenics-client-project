@@ -19,7 +19,7 @@
   <br>
     <ul>
       <% @experiments.each do |experiment| %>
-        <li class='title'>
+        <li class='title' id= <%= experiment.id %> >
           <%= link_to "#{experiment.title}", experiment_path(experiment)  %>
         </li><br>
       <% end %>

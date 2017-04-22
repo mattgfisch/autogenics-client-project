@@ -4,8 +4,8 @@ RSpec.describe User, type: :model do
 
   describe "associations" do
 
-    let (:josh) { User.new(name: "Josh", email: "email@email.com", password: "password") }
-    let(:austin) { User.new(name: "Austin", email: "email@email.com", password: "password") }
+    let (:josh) { User.new(name: "Josh", email: "email12@email.com", password: "password") }
+    let(:austin) { User.new(name: "Austin", email: "email21@email.com", password: "password") }
     before(:each) do
       josh.role = Role.create!(name: "Faculty")
       josh.save
@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       austin.role = Role.create!(name: "Staff")
     end
 
-    let (:experiment) { Experiment.create!(title: "Study in Scarlet", abstract: "Sherlock Holmes", introduction: "blank", materials: "blank",  author_id: josh.id) }
+    let (:experiment) { Experiment.create!(title: "Study in Scarlet", abstract: "Sherlock Holmes", introduction: "blank", materials: "blank",  author_id: josh.id, staff_size: 3) }
 
     context 'user and experiments associations' do
       it "author has many experiments posted" do
