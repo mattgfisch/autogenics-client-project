@@ -39,7 +39,12 @@ class ExperimentsController < ApplicationController
         format.js {}
       end
     else
-
+      @experiment = Experiment.new
+      @message = "Missing and/or incorrect information"
+      respond_to do |format|
+        format.js {render action: 'new'}
+      end
+    end
   end
 
   private
