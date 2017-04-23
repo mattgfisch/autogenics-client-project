@@ -9,7 +9,7 @@
         </div>
           <div class="panel-body" id="create-exp">
 
-            <%= form_for @experiment, remote: true do |f| %>
+            <%= form_for @experiment, remote: true, authenticity_token: true do |f| %>
               <p>
                 <%= f.label :title %><br>
                 <%= f.text_field :title %>
