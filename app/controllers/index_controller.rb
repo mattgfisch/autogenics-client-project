@@ -1,6 +1,7 @@
 class IndexController < ApplicationController
 
   def index
+    ExampleJob.perform_now "HELLO CHORUS FROGS"
     @experiments = Experiment.order(created_at: :desc)
     @user = User.new
     if request.xhr?
